@@ -2,14 +2,6 @@
       
   Structure for your [KnockoutJS](http://knockoutjs.com) bindings.
   
-# Use cases
-
-  - Multiple ViewModels
-  - Ajaxed ViewModels
-  - Loosely coupled architecture
-  - Dynamic binding
-  - Data-bound controls and modules
-
 # Download
 
   - [knockout.namespace-latest.js](https://github.com/hunterloftis/knockout.namespaces/blob/master/build/output/knockout.namespaces-latest.js)
@@ -27,6 +19,14 @@
       ko.applyBindings(globalViewModel);
       ko.applyBindings(userViewModel, 'user');
     </script>
+
+# Use cases
+
+  - Multiple ViewModels
+  - Ajaxed ViewModels
+  - Loosely coupled architecture
+  - Dynamic binding
+  - Data-bound controls and modules
     
 # Related
 
