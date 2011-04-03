@@ -22,3 +22,9 @@
       ko.applyBindings(globalViewModel);
       ko.applyBindings(userViewModel, 'user');
     </script>
+    
+# Related
+
+  - [Initial pull request](https://github.com/SteveSanderson/knockout/pull/74)
+  - [Google groups discussion](http://groups.google.com/group/knockoutjs/browse_thread/thread/a2a5489c1e4c40de)
+  - [Initial groups RFC](http://groups.google.com/group/knockoutjs/browse_thread/thread/5f3802217f896d74/96b37601840a23be?lnk=gst&q=namespaces#96b37601840a23be)
