@@ -16,7 +16,7 @@
     <script src="knockout.namespaces-latest.js"></script>
     ...
     <span data-bind-user="text: name">
-    <span data-bind="text: title"> <!-- works alongside non-namespaced bindings -->
+    <span data-bind="text: title"> <!-- works with regular bindings -->
     ...
     <script>
       ko.applyBindings(globalViewModel);
