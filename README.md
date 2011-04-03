@@ -10,6 +10,11 @@
   - Dynamic binding
   - Data-bound controls and modules
 
+# Download
+
+  [knockout.namespace-latest.js](https://github.com/hunterloftis/knockout.namespaces/blob/master/build/output/knockout.namespaces-latest.js)
+  [knockout.namespace-latest.debug](https://github.com/hunterloftis/knockout.namespaces/blob/master/build/output/knockout.namespaces-latest.debug.js)
+  
 # Use
 
     <script src="knockout-latest.js"></script>
