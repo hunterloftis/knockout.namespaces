@@ -1,6 +1,6 @@
 # Knockout.namespaces
       
-  Structure for your KO bindings.
+  Structure for your [KnockoutJS](http://knockoutjs.com) bindings.
   
 # Use cases
 
@@ -9,5 +9,3 @@
   - Loosely coupled architecture
   - Dynamic binding
   - Data-bound controls and modules
-  
-Requires [KnockoutJS](http://knockoutjs.com)
