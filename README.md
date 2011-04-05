@@ -1,3 +1,9 @@
+# Important!
+
+  Currently waiting for a hook in Knockout to be merged.
+  If you're trying out namespaces now (awesome!), try them with
+  [the KO fork that adds the hook](https://github.com/hunterloftis/knockout)
+  
 # Knockout.namespaces
       
   Structure for your [KnockoutJS](http://knockoutjs.com) bindings.
