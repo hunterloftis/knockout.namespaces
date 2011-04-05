@@ -12,8 +12,14 @@
 
   - [knockout.namespace-latest.js](https://github.com/hunterloftis/knockout.namespaces/blob/master/build/output/knockout.namespaces-latest.js)
   - [knockout.namespace-latest.debug](https://github.com/hunterloftis/knockout.namespaces/blob/master/build/output/knockout.namespaces-latest.debug.js)
-  
-# Use
+
+# Try
+
+    $ git clone git://github.com/hunterloftis/knockout.namespaces.git
+    $ cd knockout.namespaces/examples
+    $ open simple.html
+
+# Code
 
     <script src="knockout-latest.js"></script>
     <script src="knockout.namespaces-latest.js"></script>
