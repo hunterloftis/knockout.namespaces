@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
+    <title>Simple knockout.namespaces example</title>
+    <script src="../support/knockout-latest.js"></script>
+    <script src="../build/output/knockout.namespaces-latest.js"></script>
+</head>
+<body>
+
+  <!-- Views -->
+  
+  <h1>*.title</h1>
+  <input data-bind="value: title, valueUpdate: 'afterkeydown'" />
+  <p data-bind="text: title"></p>
+  
+  <h1>user.name</h1>
+  <input data-bind-user="value: name, valueUpdate: 'afterkeydown'" />
+  <p data-bind-user="text: name"></p>
+  
+  <script>
+  
+    // ViewModels
+    
+    var globalViewModel = {
+      title: ko.observable('A Title')
+    };
+    
+    var userViewModel = {
+      name: ko.observable('A Name')
+    };
+    
+    // Bindings
+    
+    ko.applyBindings(globalViewModel);        // Traditional (data-bind)
+    ko.applyBindings(userViewModel, 'user');  // Namespaced (data-bind-user)
+    
+  </script>
+
+</body>
+</html>
