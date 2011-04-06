@@ -1,8 +1,7 @@
 # Important!
 
-  Currently waiting for a hook in Knockout to be merged.
-  If you're trying out namespaces now (awesome!), try them with
-  [the KO fork that adds the hook](https://github.com/hunterloftis/knockout)
+  knockout.namespaces requires hooks in Knockout that are only available
+  in [the latest KO master](https://github.com/SteveSanderson/knockout)
   
 # Knockout.namespaces
       

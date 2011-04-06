@@ -4,6 +4,8 @@
 
 (function (ko) {
 
+  var bindingAttributeName = 'data-bind';
+  
   /*  ko.applyBindings
    *
    *  4 method signatures:
@@ -22,7 +24,7 @@
         namespace = (namespace && namespace.length > 0) ? ('-' + namespace) : '';  // Prefix -namespace
         rootNode = rootNode || window.document.body;                              // Make "rootNode" parameter optional
       }
-      var bindingAttributeNameNs = ko.getBindingAttribute() + namespace,
+      var bindingAttributeNameNs = bindingAttributeName + namespace,
           elemsWithBindingAttribute = ko.utils.getElementsHavingAttribute(rootNode, bindingAttributeNameNs);
       ko.utils.arrayForEach(elemsWithBindingAttribute, function (element) {
           ko.applyBindingsToNode(element, null, viewModel, bindingAttributeNameNs);
