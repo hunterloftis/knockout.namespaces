@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
+    <title>Simple knockout.namespaces templating example</title>
+    
+    <script src="../support/jquery-1.6.1.min.js"></script>
+    <script src="../support/jquery.tmpl.min.js"></script>
+    <script src="../support/knockout-1.3.debug.js"></script>
+    <script src="../knockout.namespaces.js"></script>
+</head>
+<body>
+
+  <!-- Views -->
+  
+  <h1>*.title</h1>
+  <input data-bind="value: title, valueUpdate: 'afterkeydown'" />
+  <p data-bind="text: title"></p>
+  
+  <h1>user.name</h1>
+  <input data-bind-user="value: name, valueUpdate: 'afterkeydown'" />
+  <p data-bind-user="text: name"></p>
+  <a href='#' data-bind-user='text: shoppingText, click: toggleShopping'></a>
+  
+  <h1>groceries.fruit</h1>
+  <ul data-bind-groceries='template: {name: "fruitTemplate", foreach: fruit}'></ul>
+  
+  <!-- Templates -->
+  
+  <script id='typeTemplate' type='text/html'>
+    <li>${ name }</li>
+  </script>
+  
+  <!-- Mixing and matching namespaces within a template -->
+  
+  <script id='fruitTemplate' type='text/html'>
+    <li>
+      <h2>${ name }</h2>
+      <ul data-bind-groceries='template: {name: "typeTemplate", foreach: types}'></ul>
+      <div data-bind-user='visible: isShopping'>
+        <a href='#' data-bind='click: select'>Select me</a>
+      </div>
+    </li>
+  </script>
+  
+  <script>
+  
+    // ViewModels
+    
+    var globalViewModel = {
+      title: ko.observable('A Title')
+    };
+    
+    var userViewModel = {
+      name: ko.observable('A Name'),
+      isShopping: ko.observable(true),
+    };
+    userViewModel.shoppingText = ko.dependentObservable(function() {
+      if (this.isShopping()) return 'Stop shopping';
+      return 'Start shopping';
+    }, userViewModel);
+    userViewModel.toggleShopping = function() {
+      this.isShopping(!this.isShopping());
+    }
+    
+    function Fruit(name, types) {
+      this.name = name;
+      this.types = ko.observableArray(types);
+    }
+    Fruit.prototype = {
+      select: function() {
+        alert('You selected "' + this.name + '"');
+      }
+    };
+    
+    var groceriesViewModel = {
+      fruit: ko.observableArray([
+        new Fruit('Pear', [{name: 'anjou'}, {name: 'bartlett'}]),
+        new Fruit('Apple', [{name: 'red delicious'}, {name: 'gala'}]),
+        new Fruit('Banana', [{name: 'manzano'}, {name: 'plantain'}])
+      ])
+    }
+    
+    // Bindings
+  
+    // 'user' has to be bound last because it's nested inside of the groceries template...
+    // so if you call it before groceries, none of its templated DOM nodes exist yet.
+    // Though an edge case (nested bindings with *different* namespaces) this is an issue.
+    // I would like to come up with an elegant solution. One idea is parsing script-templates
+    // to find data-bind-(namespace) attributes and to inject the relevant scripts
+    
+    ko.applyBindings(globalViewModel);        // Traditional (data-bind)
+    //ko.applyBindings(userViewModel, 'user');  // Namespaced (data-bind-user)
+    ko.applyBindings(groceriesViewModel, 'groceries');  // Namespaced template (data-bind-groceries)
+    ko.applyBindings(userViewModel, 'user');  // Namespaced (data-bind-user)
+    
+  </script>
+
+</body>
+</html>
