@@ -1,16 +1,12 @@
-# Important!
-
-  knockout.namespaces requires hooks in Knockout that are only available
-  in [the latest KO master](https://github.com/SteveSanderson/knockout)
-  
 # Knockout.namespaces
       
-  Structure for your [KnockoutJS](http://knockoutjs.com) bindings.
+  Multiple [KnockoutJS](http://knockoutjs.com) ViewModels (separated by namespaces).
+  Compatible with the global namespace as well (standard global 'data-bind' ViewModel).
   
 # Download
 
-  - [knockout.namespace-latest.js](https://github.com/hunterloftis/knockout.namespaces/blob/master/build/output/knockout.namespaces-latest.js)
-  - [knockout.namespace-latest.debug](https://github.com/hunterloftis/knockout.namespaces/blob/master/build/output/knockout.namespaces-latest.debug.js)
+  - [knockout.namespaces-latest.js](https://github.com/hunterloftis/knockout.namespaces/blob/master/build/output/knockout.namespaces-latest.js)
+  - [knockout.namespaces-latest.debug](https://github.com/hunterloftis/knockout.namespaces/blob/master/build/output/knockout.namespaces-latest.debug.js)
 
 # Try
 
@@ -38,7 +34,14 @@
   - Loosely coupled architecture
   - Dynamic binding
   - Data-bound controls and modules
-    
+
+# Templates
+
+  Namespaced templates are a work-in-progress. Check out /examples/templates.html.
+  They work for common use cases, but such actions as nesting multiple templates
+  of different namespaces together may have unpredictable results. I would love
+  some help coming up with a solution.
+  
 # Related
 
   - [Initial pull request](https://github.com/SteveSanderson/knockout/pull/74)
