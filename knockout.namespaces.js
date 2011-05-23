@@ -55,7 +55,7 @@
                 // Non-namespaced KO uses group 6, but we add 2 groups for optional namespaces after data-bind
                 var dataBindAttributeValue = arguments[8];
                 // We need to detect whether or not we're binding to a namespace so we know whether to inject the 'applyBindingsToNextSiblingScript'
-                var namespace = arguments[6].slice(1);
+                var namespace = arguments[6] ? arguments[6].slice(1) : '';
                 
                 // Only bind if we're binding to the global namespace or to the current namespace
                 if (namespace === '' || namespace === ko.currentlyBindingNamespace) {
